@@ -1,0 +1,11 @@
+.calc-board {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #eee;
+}
+.calc-board-container {
+  display: flex;
+  margin: 0 auto;
+}

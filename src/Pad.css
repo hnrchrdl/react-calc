@@ -1,0 +1,13 @@
+.pad {
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #eee;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.pad:hover {
+  border: 1px solid salmon;
+}
