@@ -3,21 +3,21 @@ import './Pad.css';
 import { actionCreators as calculatorActionCreators } from './calculator';
 import { connect } from 'react-redux';
 
-class Pad extends React.Component {
+export class UnwrappedPad extends React.Component {
   handleClick = () => {
-    const { value } = this.props;
+    const { value, undo, reset, ok, addCalcStep } = this.props;
     switch (value) {
       case 'undo':
-        this.props.undo();
+        undo();
         break;
       case 'reset':
-        this.props.reset();
+        reset();
         break;
       case 'ok':
-        this.props.ok();
+        ok();
         break;
       default:
-        return this.props.addCalcStep(value);
+        return addCalcStep(value);
     }
   };
   render() {
@@ -29,7 +29,7 @@ class Pad extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = null;
 const mapDispatchToProps = dispatch => ({
   addCalcStep: val => dispatch(calculatorActionCreators.addExpression(val)),
   undo: () => dispatch(calculatorActionCreators.undo()),
@@ -40,4 +40,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Pad);
+)(UnwrappedPad);

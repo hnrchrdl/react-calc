@@ -1,3 +1,5 @@
+import { calc } from './lib';
+
 // Actions
 const EXPR_ADD = 'EXPR_ADD';
 const UNDO = 'UNDO';
@@ -35,7 +37,7 @@ export default function reducer(state = defaultState, action = {}) {
     case RESET:
       return defaultState;
     case OK:
-      const result = eval(state.steps.join(''));
+      const result = calc(state.steps);
       return { steps: [result], result };
     default:
       return state;
